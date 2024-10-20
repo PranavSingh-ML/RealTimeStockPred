@@ -4,6 +4,8 @@ on:
   schedule:
     # Runs the workflow every 24 hours
     - cron: '0 0 * * *'
+  workflow_dispatch:  # This enables manual triggering
+
 
 jobs:
   batch_processing_job:
