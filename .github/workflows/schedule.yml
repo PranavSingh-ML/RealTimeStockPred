@@ -1,28 +1,28 @@
-name: Schedule Data Processing
+name: Scheduled Batch Processing
 
 on:
   schedule:
-    - cron: '0 * * * *'  # This runs every hour
+    # Runs the workflow every 24 hours
+    - cron: '0 0 * * *'
 
 jobs:
-  run:
+  batch_processing_job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout Repository
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.x'
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Data Processing Notebook
+    - name: Run Script
       run: |
-        jupyter nbconvert --to notebook --execute --inplace spma.py
-
+        python spma.py  # If it's a Python script
