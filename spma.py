@@ -3,6 +3,13 @@ import os
 import gdown
 import pandas as pd
 
+# Define a folder name in the current working directory
+folder_name = 'data'  # or any folder name you prefer
+folder_path = os.path.join(os.getcwd(), folder_name)
+
+# Create the directory if it doesn't exist
+os.makedirs(folder_path, exist_ok=True)
+
 # Google Drive file URL for downloading data (replace with your own file IDs)
 file_urls = {
     'Adani Enterprises': 'https://drive.google.com/uc?id=1hjfIe3z1zbGwtawYeXuqItljIMAzvd7G',
@@ -14,7 +21,7 @@ file_urls = {
 }
 
 # Create a folder to save downloaded files
-folder_path = '/content/data'
+folder_path = '/data'
 os.makedirs(folder_path, exist_ok=True)
 
 # Dictionary to store dataframes
