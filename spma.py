@@ -1,6 +1,3 @@
-# Install gdown
-!pip install gdown
-
 # Import necessary libraries
 import os
 import gdown
