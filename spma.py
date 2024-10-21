@@ -41,7 +41,7 @@ for company, df in stock_data.items():
     df['Trade_Time'] = df['date'].dt.time  # Extract time
 
 # 2. Find Common Trading Dates (Ignoring Time)
-common_dates = set(stock_data['Steel Authority of India']['Trade_Date'])
+common_dates = set(stock_data['Adani Enterprises']['Trade_Date'])
 for company, df in stock_data.items():
     common_dates = common_dates.intersection(set(df['Trade_Date']))
 common_dates = sorted(list(common_dates), reverse=True)
