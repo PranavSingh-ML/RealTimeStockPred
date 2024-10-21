@@ -20,10 +20,6 @@ file_urls = {
     # Add more companies as needed
 }
 
-# Create a folder to save downloaded files
-folder_path = '/data'
-os.makedirs(folder_path, exist_ok=True)
-
 # Dictionary to store dataframes
 stock_data = {}
 
