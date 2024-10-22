@@ -110,3 +110,12 @@ class_report = classification_report(y_test, y_pred)
 print(f"Accuracy: {accuracy}")
 print(f"Confusion Matrix:\n{conf_matrix}")
 print(f"Classification Report:\n{class_report}")
+
+# Create the 'model' folder if it doesn't exist
+if not os.path.exists('model'):
+    os.makedirs('model')
+
+# After training the model
+model.save('model/stock_price_model.h5')
+print("Model saved successfully.")
+
