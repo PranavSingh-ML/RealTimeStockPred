@@ -116,6 +116,9 @@ if not os.path.exists('model'):
     os.makedirs('model')
 
 # After training the model
-model.save('model/stock_price_model.h5')
+import joblib
+
+# Assuming 'model' is your trained LogisticRegression model
+joblib.dump(model, 'model/stock_price_model.pkl')  # Saving the model as a .pkl file
 print("Model saved successfully.")
 
