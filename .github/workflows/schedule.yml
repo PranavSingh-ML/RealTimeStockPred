@@ -40,4 +40,4 @@ jobs:
       run: |
         git add .
         git commit -m "Add trained model"
-        git push https://<your-username>:${{ secrets.PAT_TOKEN }}@github.com/PranavSingh-ML/RealTimeStockPred.git
+        git push https://PranavSingh-ML:${{ secrets.PAT_TOKEN }}@github.com/PranavSingh-ML/RealTimeStockPred.git
