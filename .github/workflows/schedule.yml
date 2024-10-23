@@ -23,8 +23,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install gdown  # If you're using gdown in your script, ensure it's installed
 
-    - name: Run Python Script
+    - name: Run Script
       run: |
-        python spma.py  # This runs your Python script which handles the downloading and processing
+        python spma.py  # This runs your Python script which should save files like model/stock_price_model.h5
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "Pranav singh"
+        git config --global user.email "pranavsingh2811@gmail.com"
+        git add .
+        git commit -m "Add generated files"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
